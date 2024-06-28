@@ -16,7 +16,7 @@ build_job:
 deployment_job:
     stage: deploy
     script:
-        - sudo docker run -d --name pythoncontainer2 -p 8080:8080 pyapp
+        - sudo docker run -d --name pythoncontainer2 -p 3000:8080 pyapp
     tags:
         - python 
         - server
