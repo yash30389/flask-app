@@ -19,8 +19,8 @@ deployment_job:
         - sudo docker stop pythoncontainer && sudo docker rm pythoncontainer
         - sudo docker run -d --name pythoncontainer -p 3000:8080 pyapp:v1_0
         - sudo docker login  -u  $DOCKER_USERNAME -p $DOCKER_USER_TOKEN
-        - sudo docker tag pyapp:v1_0 $DOCKER_USERNAME/pyapp:v1.0
-        - sudo docker push $DOCKER_USERNAME/pyapp:v1.0
+        - sudo docker tag pyapp:v1_0 $DOCKER_USERNAME/pyapp:v1_0
+        - sudo docker push $DOCKER_USERNAME/pyapp:v1_0
     tags:
         - python 
         - server
