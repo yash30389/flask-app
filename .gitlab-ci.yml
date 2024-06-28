@@ -1,0 +1,23 @@
+stages:
+    - build
+    - test
+    - deploy
+
+build_job:
+    stage: build
+    script:
+        - docker --version
+        - sudo docker build -t pyapp .
+    tags:
+        - python 
+        - server
+        - shell
+
+deployment_job:
+    stage: deploy
+    script:
+        - sudo docker run -d --name pythoncontainer2 -p 8080:8080 pyapp
+    tags:
+        - python 
+        - server
+        - shell
