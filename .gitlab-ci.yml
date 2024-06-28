@@ -16,7 +16,11 @@ build_job:
 deployment_job:
     stage: deploy
     script:
+        - sudo docker stop pythoncontainer2 && sudo docker rm pythoncontainer2
         - sudo docker run -d --name pythoncontainer2 -p 3000:8080 pyapp
+        - sudo docker login  -u  $DOCKER_USERNAME -P $DOCKER_USER_TOKEN
+        - sudo docker tag pyapp $DOCKER_USERNAME/pyapp
+        - sudo docker push $DOCKER_USERNAME/pyapp
     tags:
         - python 
         - server
