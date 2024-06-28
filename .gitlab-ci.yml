@@ -19,8 +19,8 @@ deployment_job:
         - sudo docker stop pythoncontainer21 && sudo docker rm pythoncontainer21
         - sudo docker run -d --name pythoncontainer21 -p 3000:8080 pyapp
         - sudo docker login  -u  $DOCKER_USERNAME -p $DOCKER_USER_TOKEN
-        - sudo docker tag pyapp $DOCKER_USERNAME/pyapp21
-        - sudo docker push $DOCKER_USERNAME/pyapp21
+        - sudo docker tag pyapp $DOCKER_USERNAME/pyappv1.0
+        - sudo docker push $DOCKER_USERNAME/pyappv1.0
     tags:
         - python 
         - server
