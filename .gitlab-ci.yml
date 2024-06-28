@@ -7,7 +7,7 @@ build_job:
     stage: build
     script:
         - docker --version
-        - sudo docker build -t pyapp .
+        - sudo docker build -t pyapp:v1_0 .
     tags:
         - python 
         - server
@@ -16,10 +16,10 @@ build_job:
 deployment_job:
     stage: deploy
     script:
-        - sudo docker stop pythoncontainer21 && sudo docker rm pythoncontainer21
-        - sudo docker run -d --name pythoncontainer21 -p 3000:8080 pyapp
+        - sudo docker stop pythoncontainer && sudo docker rm pythoncontainer
+        - sudo docker run -d --name pythoncontainer -p 3000:8080 pyapp:v1_0
         - sudo docker login  -u  $DOCKER_USERNAME -p $DOCKER_USER_TOKEN
-        - sudo docker tag pyapp $DOCKER_USERNAME/pyapp:v1.0
+        - sudo docker tag pyapp:v1_0 $DOCKER_USERNAME/pyapp:v1.0
         - sudo docker push $DOCKER_USERNAME/pyapp:v1.0
     tags:
         - python 
