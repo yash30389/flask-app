@@ -2,8 +2,10 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: flask-app
+  description: A sample Flask application
   annotations:
     github.com/project-slug: yash30389/flask-app
 spec:
-  type: other
-  lifecycle: unknown
+  type: service
+  lifecycle: production
+  owner: Yash Rathod
