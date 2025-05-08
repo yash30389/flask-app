@@ -7,6 +7,8 @@ metadata:
     - python
     - flask
     - docker
+  annotations:
+    github.com/project-slug: yash30389/flask-app
 spec:
   type: service
   lifecycle: production
