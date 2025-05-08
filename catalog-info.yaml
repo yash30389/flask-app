@@ -15,27 +15,3 @@ spec:
   owner: group:default/yash-rathod
   system: default
 
----
-
-apiVersion: backstage.io/v1alpha1
-kind: Group
-metadata:
-  name: yash-rathod
-  namespace: default
-  description: Owner group for flask-app
-spec:
-  type: team
-  profile:
-    displayName: Yash Rathod
-  children: []
-
----
-
-apiVersion: backstage.io/v1alpha1
-kind: System
-metadata:
-  name: default
-  namespace: default
-  description: Default system for unmanaged services
-spec:
-  owner: group:default/yash-rathod
