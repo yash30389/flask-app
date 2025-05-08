@@ -14,3 +14,26 @@ spec:
   lifecycle: production
   owner: group:default/yash-rathod
   system: default
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: yash-rathod
+  description: Owner group for flask-app
+spec:
+  type: team
+  profile:
+    displayName: Yash Rathod
+  children: []
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: default
+  description: Default system for unmanaged services
+spec:
+  owner: yash-rathod
