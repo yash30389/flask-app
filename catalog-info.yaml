@@ -1,0 +1,9 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: flask-app
+  annotations:
+    github.com/project-slug: yash30389/flask-app
+spec:
+  type: other
+  lifecycle: unknown
