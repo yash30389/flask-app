@@ -12,6 +12,6 @@ metadata:
 spec:
   type: service
   lifecycle: production
-  owner: group:default/yash-rathod
+  owner: group:default/yash30389
   system: default
 
