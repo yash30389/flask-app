@@ -1,6 +1,4 @@
-# flask-project
-
-
+# Flask-Project
 
 ## Getting started
 
